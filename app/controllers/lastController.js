@@ -1,0 +1,1 @@
+rvtripsApp.controller(controllers); 
