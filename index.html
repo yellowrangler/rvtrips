@@ -41,7 +41,7 @@
 <!-- controllers  -->
 <script src="app/controllers/firstController.js"></script>
 <script src="app/controllers/parenthomeController.js"></script>
-<script src="app/controllers/adminController.js"></script>
+<script src="app/controllers/tripsController.js"></script>
 <script src="app/controllers/faqsController.js"></script>
 <script src="app/controllers/lastController.js"></script>
 <!-- factories  -->
@@ -51,6 +51,7 @@
 <!-- services  -->
 <script src="app/services/msgservice.js"></script>
 <script src="app/services/loginservice.js"></script>
+<script src="app/services/rvtripsservice.js"></script>
 <script src="app/services/selectlistservice.js"></script>
 
 <script src="app/directives/directives.js"></script>
@@ -115,6 +116,25 @@
         </a>
     </div>
 </div> <!-- end of footer -->
+
+<!-- dialogs -->
+<div class="modal fade" id="parentAlertModal" tabindex="-1" role="dialog" aria-labelledby="parentAlertModalTitle" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="parentAlertModalTitle"></h4>
+      </div>
+      <div class="modal-body">
+        <p id="parentAlertModalBody"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>  
+
 
 </body>
 </html>

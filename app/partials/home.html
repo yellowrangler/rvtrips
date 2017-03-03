@@ -5,17 +5,29 @@
 	<div style="padding-top:10px;">&nbsp;</div>
 
 	<div id="navbarButtons">
+		<div style="background-color:#F6F59B;text-align:left;" class="btn btn-info btn-lg active btn-block" id="tripsheading">
+			<a style="text-decoration:none;" data-toggle="collapse" data-parent="#navbarButtons" data-target="#trip" class="collapsed" aria-expanded="false">
+			<img style="vertical-align:middle;height:40px;display:inline;" class="" src="img/buttons/rvtrips-trip-logo.png">
+			<span style="padding-right:35px;">Trips</span>
+			</a>
+		</div> <!-- end of button -->
+
+		<div id="trip" class="collapse" aria-expanded="false" style="height:0px;">
+			<a href="#/addtrip" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Add Trip</a>
+			<a href="#/viewcurrenttrip" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Current Trip</a>
+			<a href="#/triplist" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Trip List</a>
+		</div> <!-- end of panel collapse -->
+
 		<div style="background-color:#F6F59B;text-align:left;" class="btn btn-info btn-lg active btn-block" id="servicesheading">
 			<a style="text-decoration:none;" data-toggle="collapse" data-parent="#navbarButtons" data-target="#service" class="collapsed" aria-expanded="false">
-			<img style="vertical-align:middle;height:40px;display:inline;" class="" src="img/buttons/rvtrips-service-logo.png"><span style="padding-left:15px;">Service</span>
+			<img style="vertical-align:middle;height:40px;display:inline;" class="" src="img/buttons/rvtrips-service-logo.png"><span style="padding-left:15px;">Service Stop</span>
 			</a>
 		</div> <!-- end of button -->
 
 		<div id="service" class="collapse" aria-expanded="false" style="height:0px;">
 			<a href="#/addservicestop" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Add Service Stop</a>
-			<a href="#/addmaintenancestop" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Add Maintenance Stop</a>
-			<a href="#/viewcurrentmileagestats" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Current Mileage Stats</a>
-			<a href="#/viewtripmileagestats" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Trip Mileage Stats</a>
+			<a href="#/viewcurrentservicestop" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Current Service Stop</a>
+			<a href="#/viewtripmileagestats" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Trip Service Stats</a>
 		</div> <!-- end of panel collapse -->
 
 		<div style="background-color:#F6F59B;text-align:left;" class="btn btn-info btn-lg active btn-block" id="waypointheading">
@@ -26,9 +38,22 @@
 
 		<div id="waypoint" class="collapse">
 			<a href="#/addwaypoint" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Add Waypoint</a>
-			<a href="#/currentwaypointstats" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Current Waypoint Stats</a>
+			<a href="#/lastwaypoint" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Last Waypoint</a>
 			<a href="#/tripwaypointstats" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Trip Waypoint Stats</a>
 		</div> <!-- end of panel collapse -->
+
+		<div style="background-color:#F6F59B;text-align:left;" class="btn btn-info btn-lg active btn-block" id="maintenancesheading">
+			<a style="text-decoration:none;" data-toggle="collapse" data-parent="#navbarButtons" data-target="#maintenance" class="collapsed" aria-expanded="false">
+			<img style="vertical-align:middle;height:40px;display:inline;" class="" src="img/buttons/rvtrips-maintenance-logo.png"><span style="padding-left:15px;">Maintenance</span>
+			</a>
+		</div> <!-- end of button -->
+
+		<div id="maintenance" class="collapse" aria-expanded="false" style="height:0px;">
+			<a href="#/addmaintenancestop" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Add Maintenance Stop</a>
+			<a href="#/viewlastmaintenancestop" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Last Maintenance Stop</a>
+			<a href="#/viewtripmaintenancestats" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Trip Maintenance Stats</a>
+		</div> <!-- end of panel collapse -->
+
 
 		<div style="background-color:#F6F59B;text-align:left;" class="btn btn-info btn-lg active btn-block" id="vehicleinfoheading">
 				<a style="text-decoration:none;" data-toggle="collapse" data-parent="#navbarButtons" data-target="#vehicleinfo" class="collapsed" aria-expanded="false">
@@ -37,8 +62,23 @@
 		</div> <!-- end of button -->
 
 		<div id="vehicleinfo" class="collapse" aria-expanded="false">
-			<a href="#/rvairstream" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Airstream</a>
+			<a href="#/rvairstream" class="btn btn-info btn-lg active btn-block left-column-text" role="button">RV</a>
 			<a href="#/towvehicle" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Tow Vehicle</a>
+		</div> <!-- end of panel collapse -->
+
+		<div style="background-color:#F6F59B;text-align:left;" class="btn btn-info btn-lg active btn-block" id="setupselect">
+				<a style="text-decoration:none;" data-toggle="collapse" data-parent="#navbarButtons" data-target="#setup" class="collapsed" aria-expanded="false">
+				<img style="vertical-align:middle;height:40px;display:inline;" class="" src="img/buttons/rvtrips-setup-logo.png"><span style="padding-left:15px;">Setup</span>
+				</a>
+		</div> <!-- end of button -->
+
+		<div id="setup" class="collapse" aria-expanded="false">
+			<a href="#/managetrips" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Manage Trips</a>
+			<a href="#/manageservicestop" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Manage Service Stop</a>
+			<a href="#/managemaintenancestop" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Manage Maintenance Stop</a>
+			<a href="#/managewaypointstop" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Manage Waypoint Stop</a>
+			<a href="#/addvehicleinfo" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Manage Vehicle Info</a>
+			<a href="#/managemember" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Manage Self</a>
 		</div> <!-- end of panel collapse -->
 
 		<div style="background-color:#F6F59B;text-align:left;" class="btn btn-info btn-lg active btn-block" id="adminselect">
@@ -48,16 +88,13 @@
 		</div> <!-- end of button -->
 
 		<div id="admin" class="collapse" aria-expanded="false">
-			<a href="#/addservicestation" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Add Service Station</a>
-			<a href="#/editservicestation" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Edit Service Station</a>
-			<a href="#/addmember" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Add Member</a>
-			<a href="#/editmember" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Edit Member</a>
-			<a href="#/editservicestop" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Edit Service Stop</a>
-			<a href="#/editservicestop" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Edit Service Stop</a>
-			<a href="#/editwaypointstop" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Edit Waypoint Stop</a>
-			<a href="#/editmaintenancestop" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Edit Maintenance Stop</a>
-			<a href="#/addvehicleinfo" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Add Vehicle Info</a>
-			<a href="#/editvehicleinfo" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Edit Vehicle Info</a>
+			<a href="#/managetrips" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Manage Trips</a>
+			<a href="#/manageservicestation" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Manage Service Stations</a>
+			<a href="#/managemember" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Manage Member</a>
+			<a href="#/manageservicestop" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Manage Service Stop</a>
+			<a href="#/managemaintenancestop" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Manage Maintenance Stop</a>
+			<a href="#/managewaypointstop" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Manage Waypoint Stop</a>
+			<a href="#/addvehicleinfo" class="btn btn-info btn-lg active btn-block left-column-text" role="button">Manafe Vehicle Info</a>
 			<a href="#/weeklyscripts" class="btn btn-info btn-lg active btn-block left-column-text" role="button">System Scripts</a>
 		</div> <!-- end of panel collapse -->
 

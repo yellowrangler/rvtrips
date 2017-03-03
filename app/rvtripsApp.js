@@ -19,6 +19,11 @@ rvtripsApp.config(function ($routeProvider) {
                 controller: 'faqsController',
                 templateUrl: 'app/partials/faqs.html'
             })  
+        .when('/addtrip',
+            {
+                controller: 'addtripController',
+                templateUrl: 'app/partials/addtrip.html'
+            })
         .when('/servicestop',
             {
                 controller: 'serviceStopController',

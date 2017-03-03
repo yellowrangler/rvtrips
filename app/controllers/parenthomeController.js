@@ -48,6 +48,12 @@ controllers.rvtripParentController = function ($scope, $http, $window, $route, $
     $scope.checkRole = function () {
         checkRole();
     }
+
+    $scope.showAlert = function (title, body) {
+        $('#parentAlertModalTitle').text(title);
+        $('#parentAlertModalBody').text(body);
+        $('#parentAlertModal').modal();
+    }
 }
 
 controllers.loginController = function ($scope, $http, $location, loginService, msgService, loginFactory) {

@@ -33,7 +33,7 @@ $returnArrayLog = new AccessLog("logs/");
 //------------------------------------------------------
 // open connection to host
 $DBhost = "localhost";
-$DBschema = "ddd";
+$DBschema = "rvtripsdb";
 $DBuser = "tarryc";
 $DBpassword = "tarryc";
 
@@ -120,7 +120,7 @@ if ($rc == 1)
 	}
 	else
 	{
-		$msgtext = "You are now logged into Dare Devil Ducks NFL game Website!";
+		$msgtext = "You are now logged into Flying Dreamers RV App!";
 	}
 }
 

@@ -1,0 +1,63 @@
+<div class="pageNavbarOffset">&nbsp;</div>
+
+<div class="pageCaption row">
+  <div class="col-md-12">
+    <h2 class="headerTitle">Add Trip</h2>
+  </div> <!-- end of column -->
+</div> <!-- end of row -->
+
+<div class="pageStandardOffset row">
+    <div class="col-md-12">
+      <div style="padding-left:5%;padding-right:5%;" style="width:90%;">
+
+      <form id="addtripForm" name="addtripForm">
+
+        <div class="panel panel-default">
+          <div class="subpanelCaption panel-heading">Trip Information</div>
+          <div style="padding:10px;" class="form-horizontal">
+              <div class="form-group" >
+                <label for="tripname" class="col-md-2 control-label">Name</label>
+                <div class="col-md-5">
+                    <input tabindex="1" type="text" class="form-control" id="tripname" name="tripname" ng-model="current.tripname" placeholder="Trip name">
+                </div>
+              </div> <!-- end of form-group -->
+
+              <div class="form-group">
+                  <label for="tripdescription" class="col-md-2 control-label">Description</label>
+                  <div class="col-md-5">
+                      <textarea tabindex="2" class="form-control" ng-model="current.tripdescription" id="tripdescription" name="tripdescription" rows="3"></textarea>
+                  </div>
+              </div> <!-- end of form-group -->
+
+              <div class="form-group">
+                  <label for="role" class="col-md-2 control-label">Start Date</label>
+                  <div class="col-md-3">
+                      <input tabindex="3" type="date" class="form-control" id="tripstartdate" name="tripstartdate" ng-model="current.tripstartdate" placeholder="Start Date">
+                  </div>
+              </div> <!-- end of form-group -->
+
+              <div class="form-group">
+                  <label for="role" class="col-md-2 control-label">Start Date</label>
+                  <div class="col-md-3">
+                      <input tabindex="4" type="date" class="form-control" id="tripenddate" name="tripenddate" ng-model="current.tripenddate"  placeholder="End Date">
+                  </div>
+              </div> <!-- end of form-group -->
+
+              <div class="form-group" >
+                <div style="padding-top:25px;" class="col-md-3">
+                  <input type="checkbox" tabindex="5"ng-model="current.tripiscurrent" ng-checked="current.tripiscurrent == '1'" id="tripiscurrent" name="tripiscurrent" ng-model="current.tripiscurrent" > Make this Trip Current
+                </div>  
+              </div> <!-- end of form-group -->
+          </div>
+        </div> <!-- end of panel panel -->
+
+        <div style="padding-top:25px;padding-bottom:50px; class="form-group">
+          <div class="col-md-5">
+            <button tabindex="6" id="addnewtripbutton" data-ng-click="addnewtrip()" type="button" class="btn btn-primary">Add Trip</button>
+          </div>
+        </div> <!-- end of form-group -->
+        <input type="hidden" value="{{current.memberid}}" id="memberid" name="memberid">
+      </form>
+      </div> <!-- end of div style 100% -->
+    </div> <!-- end of div col md 12 -->
+</div> <!-- end of row -->    

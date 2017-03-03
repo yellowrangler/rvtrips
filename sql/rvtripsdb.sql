@@ -30,10 +30,28 @@ CREATE TABLE membertbl (
 DROP TABLE IF EXISTS tripstbl;
 CREATE TABLE tripstbl (
   id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  memberid bigint(20) unsigned DEFAULT NULL,
   tripname varchar(255) NULL,
-  comment varchar(255) DEFAULT NULL,
+  description varchar(255) DEFAULT NULL,
   startdate datetime,
-  enddate datetime,  
+  enddate datetime, 
+  iscurrent INT DEFAULT 0,
+  PRIMARY KEY (id)
+); 
+
+DROP TABLE IF EXISTS tripattendeestbl;
+CREATE TABLE tripattendeestbl (
+  id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  name varchar(255) DEFAULT NULL,
+  gender varchar(25) DEFAULT NULL,
+  email varchar(255) DEFAULT NULL,
+  street varchar(255) DEFAULT NULL,
+  city varchar(255) DEFAULT NULL,
+  state varchar(255) DEFAULT NULL,
+  zip varchar(255) DEFAULT NULL,
+  phonenumber varchar(255) DEFAULT NULL,
+  biography varchar(10000) DEFAULT NULL,
+  passwd varchar(255) DEFAULT NULL,
   PRIMARY KEY (id)
 ); 
 
@@ -67,8 +85,36 @@ CREATE TABLE servicestopstbl (
   city varchar(255) DEFAULT NULL,
   state varchar(255) DEFAULT NULL,
   comment varchar(255) DEFAULT NULL,
-  enterdate datetime,
-  createdate datetime,
+  PRIMARY KEY (id)
+); 
+
+DROP TABLE IF EXISTS maintenancestopstbl;
+CREATE TABLE maintenancestopstbl (
+  id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  memberid bigint(20) unsigned DEFAULT NULL,
+  tripid bigint(20) unsigned DEFAULT NULL,
+  businessname varchar(255) DEFAULT NULL,
+  pdate datetime,
+  amount decimal(13,2) DEFAULT NULL,
+  odometer int(11) DEFAULT NULL,
+  city varchar(255) DEFAULT NULL,
+  state varchar(255) DEFAULT NULL,
+  comment varchar(255) DEFAULT NULL,
+  PRIMARY KEY (id)
+); 
+
+DROP TABLE IF EXISTS waypointstopstbl;
+CREATE TABLE waypointstopstbl (
+  id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  memberid bigint(20) unsigned DEFAULT NULL,
+  tripid bigint(20) unsigned DEFAULT NULL,
+  waypointtypeid bigint(20) unsigned DEFAULT NULL,
+  pdate datetime,
+  amount decimal(13,2) DEFAULT NULL,
+  odometer int(11) DEFAULT NULL,
+  city varchar(255) DEFAULT NULL,
+  state varchar(255) DEFAULT NULL,
+  comment varchar(255) DEFAULT NULL,
   PRIMARY KEY (id)
 ); 
 
@@ -84,6 +130,13 @@ CREATE TABLE servicestationstbl (
   PRIMARY KEY (id)
 ); 
 
+DROP TABLE IF EXISTS waypointtypetypestbl;
+CREATE TABLE waypointtypetypestbl (
+  id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  waypointtype varchar(255) NULL,
+  PRIMARY KEY (id)
+); 
+
 INSERT INTO membertbl
   (id, membername, membernameprofileind, screenname, gender, genderprofileind, 
   avatar, role, email, emailprofileind, street, city, state, zip, addressprofileind, 
@@ -95,30 +148,48 @@ INSERT INTO membertbl
 
 
 
+rvtrips
+
+Trips
+  Set Current Trip
+  Current Trip
+  Trip List
 Service
   Add Service Stop
-  Add Maintenance Stop
-  Current Service Stats
+  Last Service Stop
   Trip Service Stats
+Maintenance
+  Maintenance Stop
+  Last Maintenance Stop
+  Trip Maintenance Stats
 Waypoint
   Add Waypoint
   Current Waypoint Stats
   Trip Waypoint Stats
 Vehicle Info
-  RV Aisrtream
+  RV Airstream
   Tow Vehicle
 Admin
+  Add Trip
+  Edit Trip
+
   Add service station
   Edit service station
+
   Add Member
   Edit Member
+
   Edit Service Stop
+
   Edit Waypoint Stop  
+
   Edit Maintenance Stop
+
   Add Vehicle Info
   Edit Vehicle Info
 
 
+Waypoint type = overnight/food/rest
 Service Stop (this will take in data and click snapshot );
 Waypoint
 
