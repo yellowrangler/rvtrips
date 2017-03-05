@@ -2,20 +2,29 @@
 rvtripsApp.factory('tripFactory', function($q, $http) {
     var factory = {};
 
-    factory.addTripInfo = function (data) {
+    factory.addmemberTrip = function (data) {
         return $http({ 
             method: 'POST', 
-            url: "app/ajax/addtripinfo.php",
+            url: "app/ajax/addmembertrip.php",
             data: data,
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         })
     }
 
-    factory.getNFLTeams = function () {
+    factory.getmembertypeaheadTrip = function (data) {
         return $http({ 
             method: 'POST', 
-            url: "app/ajax/getnflteams.php",
-            // data: data,
+            url: "app/ajax/getmembertriptypeahead.php",
+            data: data,
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        })
+    }
+
+    factory.getmemberTrip = function (data) {
+        return $http({ 
+            method: 'POST', 
+            url: "app/ajax/getmembertrip.php",
+            data: data,
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         })
     }

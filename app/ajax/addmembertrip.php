@@ -101,7 +101,9 @@ $tripdescription = mysql_real_escape_string($tripdescription);
 //---------------------------------------------------------------
 // check if tripname already exists
 //---------------------------------------------------------------
-$sql = "SELECT * FROM tripstbl WHERE tripname = '$tripname'";
+$sql = "SELECT * FROM tripstbl 
+	WHERE tripname = '$tripname' 
+	AND memberid = '$memberid' ";
 // print $sql;
 
 $sql_result = @mysql_query($sql, $dbConn);
@@ -129,7 +131,31 @@ if ($count == 1)
 
 	exit($msgtext);
 }
-	
+
+//
+// if make current reset any other current trips
+//
+if ($tripiscurrent == 1)
+{
+
+	$sql = "UPDATE tripstbl SET iscurrent = 0"; 
+
+	$sql_result = @mysql_query($sql, $dbConn);
+	if (!$sql_result)
+	{
+		$log = new ErrorLog("logs/");
+		$sqlerr = mysql_error();
+		$log->writeLog("SQL error: $sqlerr - Error doing update to db Unable to add trip for rvtripdbs tripname $tripname. Can not update iscurrent");
+		$log->writeLog("SQL: $sql");
+
+		$rc = -100;
+		$msgtext = "System Error: $sqlerr. sql = $sql";
+
+		exit($msgtext);
+	}
+}	
+
+
 //
 // insert new trip
 //

@@ -106,8 +106,9 @@
 }
 
 .headerTitle {
-	color:#6C0000;
-	font-family: 'Damion', 'Oleo Script Swash Caps', Helvetica, sans-serif;	 
+	/*color:#6C0000; */	
+	color:teal;
+	font-family: 'Copperplate', 'Oleo Script Swash Caps', Helvetica, sans-serif;	 
 	font-weight: 700;
 	margin: 0;
 }
