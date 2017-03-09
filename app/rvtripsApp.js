@@ -29,6 +29,11 @@ rvtripsApp.config(function ($routeProvider) {
                 controller: 'managemembertripController',
                 templateUrl: 'app/partials/managemembertrip.html'
             })
+        .when('/currentmembertrip',
+            {
+                controller: 'currentmembertripController',
+                templateUrl: 'app/partials/currentmembertrip.html'
+            })
         .when('/servicestop',
             {
                 controller: 'serviceStopController',

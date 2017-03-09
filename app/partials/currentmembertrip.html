@@ -2,7 +2,7 @@
 
 <div class="pageCaption row">
   <div class="col-md-12">
-    <h2 class="headerTitle">Manage Trip</h2>
+    <h2 class="headerTitle">Current Trip</h2>
   </div> <!-- end of column -->
 </div> <!-- end of row -->
 
@@ -10,26 +10,18 @@
     <div class="col-md-12">
       <div style="padding-left:5%;padding-right:5%;" style="width:90%;">
 
-      <form id="managemembertripForm" name="managemembertripForm">
+      <form id="currentmembertripForm" name="currentmembertripForm">
 
         <div class="panel panel-default">
-          <div class="subpanelCaption panel-heading">Trip Information</div>
-          <div style="padding:10px;" class="form-horizontal">
+          <div class="subpanelCaption panel-heading">Current Trip Information</div>
+            <div style="padding:10px;" class="form-horizontal">
+
               <div class="form-group" >
-                <label for="membertripid" class="col-md-2 control-label">Select Name</label>
+                <label for="tripname" class="col-md-2 control-label">Name</label>
                 <div class="col-md-5">
-                  <select tabindex="1"  class="form-control" ng-change="getMemberTrip(current.trip.membertripid)" ng-model="current.trip.membertripid" id="membertripid" name="membertripid">
-                    <option ng-repeat="membertrip in membertrips" ng-selected="current.trip.membertripid == membertrip.membertripid" value="{{membertrip.membertripid}}">{{membertrip.membertripname}}</option>
-                  </select>
+                  <input tabindex="2" type="text" class="form-control" id="tripname" name="tripname" ng-model="current.trip.tripname">
                 </div>
               </div> <!-- end of form-group -->
-
-            <div class="form-group" >
-              <label for="tripname" class="col-md-2 control-label">Name</label>
-              <div class="col-md-5">
-                <input tabindex="2" type="text" class="form-control" id="tripname" name="tripname" ng-model="current.trip.tripname">
-              </div>
-            </div> <!-- end of form-group -->
 
               <div class="form-group">
                   <label for="tripdescription" class="col-md-2 control-label">Description</label>
@@ -57,6 +49,7 @@
                   <input type="checkbox" tabindex="6"ng-model="current.trip.tripiscurrent" ng-checked="current.trip.tripiscurrent == '1'" id="tripiscurrent" name="tripiscurrent" ng-model="current.trip.tripiscurrent" > Make this Trip Current
                 </div>  
               </div> <!-- end of form-group -->
+
           </div>
         </div> <!-- end of panel panel -->
 

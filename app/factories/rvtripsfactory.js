@@ -11,6 +11,33 @@ rvtripsApp.factory('tripFactory', function($q, $http) {
         })
     }
 
+    factory.updatememberTrip = function (data) {
+        return $http({ 
+            method: 'POST', 
+            url: "app/ajax/updatemembertrip.php",
+            data: data,
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        })
+    }
+
+    factory.getcurrentmemberTrip = function (data) {
+        return $http({ 
+            method: 'POST', 
+            url: "app/ajax/getcurrentmembertrip.php",
+            data: data,
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        })
+    }
+
+    factory.deletememberTrip = function (data) {
+        return $http({ 
+            method: 'POST', 
+            url: "app/ajax/deletemembertrip.php",
+            data: data,
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        })
+    }
+
     factory.getmembertypeaheadTrip = function (data) {
         return $http({ 
             method: 'POST', 
